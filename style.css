@@ -1,0 +1,150 @@
+/* Formatação padrão css */
+*{
+    margin: 0;
+    padding: 0;
+}
+body,html{
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Cabeçalho da pagina */
+
+.cabecalho-principal{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 25px;
+}
+.logo{ /*Logo Provisória*/
+    background-color: black;
+    width: 50px;
+    height: 50px;
+}
+.nav-list{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.nav-item{
+    transition: .5s;
+    position: relative;
+}
+.nav-item:hover{
+    transform: translateY(-5px);
+}
+.nav-item::after{
+    content: "";
+    width: 50%;
+    height: 3px;
+    border-radius: 30%;
+    background-color: black;
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translateX(-50%)scaleX(0);
+    transition: .5s;
+}
+.nav-item:hover::after{
+    transform: translateX(-50%)scaleX(1);
+}
+.nav-link{
+    text-decoration: none;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif; /*Fonte Provisória*/
+    font-weight: bolder;
+}
+
+/* Caixa de input do numero */
+
+.form-number{
+    border: solid 1px black;
+    border-radius: 20px;
+    width: fit-content;
+    padding: 30px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.form-number span{
+    color: green;
+}
+.form-number h2{
+    font-size: medium;
+    margin-bottom: 30px;
+}
+#country-code{
+    font-size: larger;
+    font-weight: bolder;
+    /* padding: 5px 15px; */
+    border-radius: 10px;
+    border: solid 1px black;
+    width: 150px;
+    height: 30px;
+    text-align: left;
+}
+.number-info{
+    display: flex;
+    align-items: center;
+    /* gap: 60px; */
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+    width: 90%;
+}
+.lb-inpt{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+#phone-number{
+    font-size: large;
+    font-weight: bolder;
+    border-radius: 10px;
+    /* padding: 5px, 20px; */
+    text-indent: 20px;
+    border: solid 1px black;
+    width: 200px;
+    height: 30px;
+}
+
+/* Caixa de edição da mensagem */
+
+.text-message{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.text-message p{
+    margin: 10px 0 40px 0;
+}
+#message{
+    width: 90%;
+    height: 200px;
+    border-radius: 10px;
+    text-indent: 15px;
+    padding: 10px ;
+}
+
+/* Botão gerador de link */
+
+#generate-link{
+    background-color: green;
+    border: solid 2px green;
+    border-radius: 10px;
+    padding: 10px 15px;
+    color: #fff;
+    font-weight: bolder;
+    text-transform: uppercase;
+    margin-top: 40px;
+    transition: .5s;
+}
+#generate-link:hover{
+    cursor: pointer;
+    color: green;
+    background-color: #fff;
+    transform: scale(1.05);
+}
