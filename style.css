@@ -2,12 +2,15 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 body,html{
     width: 100%;
     min-height: 100vh;
 }
-
+:root{
+   --verde: #25D366;  
+}
 /* Cabeçalho da pagina */
 
 .cabecalho-principal{
@@ -56,6 +59,15 @@ body,html{
     font-weight: bolder;
 }
 
+/* Container de conteudo principal */
+
+.main_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 30px 0;
+}
+
 /* Caixa de input do numero */
 
 .form-number{
@@ -70,7 +82,7 @@ body,html{
     flex-direction: column;
 }
 .form-number span{
-    color: green;
+    color:  var(--verde);
 }
 .form-number h2{
     font-size: medium;
@@ -132,8 +144,8 @@ body,html{
 /* Botão gerador de link */
 
 #generate-link{
-    background-color: green;
-    border: solid 2px green;
+    background-color:  var(--verde);
+    border: solid 2px  var(--verde);
     border-radius: 10px;
     padding: 10px 15px;
     color: #fff;
@@ -144,7 +156,29 @@ body,html{
 }
 #generate-link:hover{
     cursor: pointer;
-    color: green;
+    color:  var(--verde);
     background-color: #fff;
     transform: scale(1.05);
+}
+
+/* Exibição do celular */
+
+.cellphone{
+    position: relative;
+}
+#exib-phone-number{
+    position: absolute;
+    top: 5.5%;
+    font-size: medium;
+    left: 27%;
+    color: #fff;
+}
+#exib-message{
+    position: absolute;
+    bottom: 42%;
+    right: 13%;
+    background-color: var(--verde);
+    border-radius: 10px 0 10px 10px;
+    padding: 10px;
+    max-width: 60%;
 }

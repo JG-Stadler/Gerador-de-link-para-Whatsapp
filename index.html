@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="scripts/link-generator.js" defer></script>
+    <script src="scripts/LoadCellPhoneInfo.js" defer></script>
     <title>Gerador de Links para WhatsApp</title>
 </head>
 <body>
@@ -18,28 +19,37 @@
                 </ul>
             </nav>
         </header>
-        <main class="form-number">
-            <h1>Gere um link para seu <span>WhatsApp</span></h1>
-            <h2>Insira seu numero e veja a magica acontecer</h2>
-
-            <form class="number-info">
-                <div class="lb-inpt">
-                    <label for="country-code">Código do país</label>
-                        <select id="country-code">
-                            <option value="+55">Brazil</option>
-                        </select>
-                </div>
-                <div class="lb-inpt">
-                    <label for="phone-number">Numero de telefone</label>
-                    <input type="number" id="phone-number" placeholder="00 00000-0000">
-                </div>
-                </form>
-                <section class="text-message">
-                    <h1>Adicione um texto padrão</h1>
-                    <p>As pessoas que acessarem seu WhatsApp pelo seu link chegarão com esta mensagem</p>
-                    <textarea id="message" placeholder="Escreva algo..."></textarea>
+        <div class="main_container">
+            <main class="form-number">
+                <h1>Gere um link para seu <span>WhatsApp</span></h1>
+                <h2>Insira seu numero e veja a magica acontecer</h2>
+                <form class="number-info">
+                    <div class="lb-inpt">
+                        <label for="country-code">Código do país</label>
+                            <select id="country-code">
+                                <option value="+55">Brazil</option>
+                            </select>
+                    </div>
+                    <div class="lb-inpt">
+                        <label for="phone-number">Numero de telefone</label>
+                        <input type="number" id="phone-number" placeholder="00 00000-0000"
+                        oninput="ChangePhoneNumberText()" maxlength="11">
+                    </div>
+                    </form>
+                    <section class="text-message">
+                        <h1>Adicione um texto padrão</h1>
+                        <p>As pessoas que acessarem seu WhatsApp pelo seu link chegarão com esta mensagem</p>
+                        <textarea id="message" placeholder="Escreva algo..."
+                        oninput="ChangeMessageText()"></textarea>
+                    </section>
+                    <button id="generate-link">Gerar Link</button>
+                </main>
+                <!-- Foto celular -->
+                <section class="cellphone">
+                    <img src="Img/celular-whatsapp.png" alt="foto celular">
+                    <h1 id="exib-phone-number">00 000000000</h1>
+                    <p id="exib-message">...</p>
                 </section>
-                <button id="generate-link">Gerar Link</button>
-            </main>
+        </div>
 </body>
 </html>
