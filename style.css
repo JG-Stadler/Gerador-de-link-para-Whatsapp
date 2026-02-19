@@ -110,6 +110,7 @@ body,html{
     width: 150px;
     height: 30px;
     text-align: left;
+    outline: none;
 }
 #phone-number{
     font-size: medium;
@@ -119,6 +120,7 @@ body,html{
     border: solid 1px black;
     width: 150px;
     height: 30px;
+    outline: none;
 }
 .lb-inpt{
     display: flex;
@@ -138,16 +140,18 @@ body,html{
     font-size: larger;
 }
 .text-message p{
-    margin: 10px 0 20px 0;
+    margin: 5px 0 20px 0;
     font-size: smaller;
     width: 70%;
 }
 #message{
     width: 90%;
-    height: 150px;
+    height: 130px;
     border-radius: 10px;
     text-indent: 15px;
     padding: 10px ;
+    resize: none;
+    outline: none;
 }
 
 /* Botão gerador de link */
@@ -204,49 +208,52 @@ body,html{
     opacity: 0;
 }
 
-/* Exibição do link final */
+/* Janela de aviso da copia do link*/
 
-.final-link{
+.clipboard-alert{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     text-align: center;
-    padding: 20px 0;
-    width: 500px;
-    max-width: 90%;
-    margin: 50px auto;
     background-color: var(--cinza);
+    padding: 20px 10px;
     border-radius: 10px;
-    margin-bottom: 50px;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.418);
-    border: solid 1px var(--verde-escuro);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.493);
+    width: 300px;
+    transform: scale(0);
+    transition: transform .5s;
+    border: solid 2.5px var(--verde);
 }
-.final-link h1{
-    color: var(--verde);
-    /* text-shadow: 0 0 5px rgba(0, 0, 0, 0.479); */
+
+.clipboard-alert-window-open{
+    transform: translate(-50%,-50%) scale(1);
 }
-#show-link{
-    background-color: #fff;
-    border-radius: 5px;
-    padding: 5px 10px;
-    font-weight: bold;
-    width: 90%;
-    margin: 10px auto;
-    color: rgba(0, 0, 0, 0.397);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-    border: solid 1px var(--verde-escuro);
-    overflow-x: hidden;
+
+.clipboard-alert h1{
+    font-size: x-large;
 }
-#copy-link{
+#show-final-link{
+    margin: 10px 0;
+}
+#close-window{
     background-color: var(--verde);
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.418);
-    padding: 10px;
-    color: #fff;
+    font-size: larger;
+    padding: 5px 15px;
     border-radius: 10px;
-    border: none;
-    transition: .5s;
-    font-weight: bolder;
+    border: solid 1px var(--verde);
+    color: #fff;
+    font-weight: bold;
     cursor: pointer;
-    border: solid 1.5px var(--verde);
+    transition: .5s;
 }
-#copy-link:hover{
-    color: var(--verde);
+#close-window:hover{
     background-color: #fff;
+    color: var(--verde);
+}
+
+/* Div para borrar a tela quando a janela da clipboard for aberta */
+
+.blur{
+    filter: blur(5px);
 }

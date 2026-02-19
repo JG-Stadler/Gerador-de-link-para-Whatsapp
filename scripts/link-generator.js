@@ -1,6 +1,7 @@
 const submitButton = document.getElementById("generate-link");
-const ShowLinkBox = document.getElementById('show-link');
-const CopyBTN = document.getElementById("copy-link");
+const ClipboardAlertWindow = document.querySelector(".clipboard-alert");//Janela de alerta da clipboard
+const BlurDiv = document.getElementById("blur"); //Div para borrar a tela
+
 let link = "";
 
 submitButton.addEventListener('click',()=>{
@@ -13,17 +14,17 @@ submitButton.addEventListener('click',()=>{
     }
     
     link = `https://wa.me/${countryCode}${phoneNumber}?text=${defaultMessage}`;
-    ShowLinkBox.innerText = link;
+    navigator.clipboard.writeText(link); // Função pora copiar o link para a clipboard
+    
+    ClipboardAlertWindow.classList.add("clipboard-alert-window-open"); //Adição da classe para abrir a janela
+    const showLink = document.getElementById("show-final-link");
+    showLink.innerText = link;
+
+    BlurDiv.classList.add("blur");
 });
 
-// Botão para copiar o link
-
-CopyBTN.addEventListener("click",()=>{
-    if (!link) {
-       alert("Gere o link primeiro!");
-    return;
-    }
-
-    navigator.clipboard.writeText(link);
-    alert("Link copiado!");
+const CloseWindowBTN = document.getElementById("close-window"); //Botão para fechar a janela 
+CloseWindowBTN.addEventListener("click",()=>{
+    ClipboardAlertWindow.classList.remove("clipboard-alert-window-open");
+    BlurDiv.classList.remove("blur");
 });
