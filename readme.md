@@ -56,10 +56,8 @@ Ao acessar esse link, o WhatsApp será aberto com a mensagem já preenchida.
 
 ## 📌 Possíveis Melhorias
 
-- Geração de QR Code  
-- Botão para copiar o link automaticamente  
+- Geração de QR Code   
 - Validação de número de telefone  
-- Integração com GitHub Pages para deploy automático  
 
 ---
 
