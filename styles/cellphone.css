@@ -1,0 +1,32 @@
+/* Exibição do celular */
+
+.cellphone{
+    position: relative;
+    height: 500px;
+}
+.cellphone img{
+    height: 100%;
+}
+#exib-phone-number{
+    position: absolute;
+    top: 5.5%;
+    font-size: medium;
+    left: 27%;
+    color: #fff;
+    font-size: smaller;
+}
+#exib-message{
+    position: absolute;
+    bottom: 42%;
+    right: 13%;
+    background-color: var(--verde);
+    border-radius: 10px 0 10px 10px;
+    padding: 10px;
+    max-width: 60%;
+    font-size: smaller;
+    max-height: 44.1%;
+    overflow-y: scroll;
+}
+#exib-message::-webkit-scrollbar{
+    opacity: 0;
+}

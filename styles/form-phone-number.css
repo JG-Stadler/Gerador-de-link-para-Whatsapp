@@ -1,0 +1,130 @@
+
+/* Caixa de input do numero */
+
+.form-number{
+    border: solid 1px black;
+    border-radius: 20px;
+    width: fit-content;
+    max-width: 85vw;
+    padding: 20px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--cinza);
+    border: solid 1px var(--verde-escuro);
+}
+.form-number span{
+    color:  var(--verde);
+}
+.form-number h2{
+    font-size: medium;
+}
+.number-info{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 15px;
+    width: 90%;
+}
+#country-code{
+    font-size: small;
+    font-weight: bolder;
+    border-radius: 5px;
+    border: solid 1px black;
+    width: 150px;
+    height: 30px;
+    text-align: left;
+    outline: none;
+}
+#phone-number{
+    font-size: medium;
+    font-weight: bolder;
+    border-radius: 5px;
+    text-indent: 5px;
+    border: solid 1px black;
+    width: 150px;
+    height: 30px;
+    outline: none;
+}
+.lb-inpt{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+@media (max-width:560px) {
+    .form-number h1{
+        width: 90%;
+    }
+    .form-number h2{
+        font-size: x-small;
+        margin-top: 10px;
+    }
+    .number-info{
+        margin: 35px 0;
+    }
+    .number-info label{
+        font-size: small;
+    }
+    #country-code, #phone-number{
+        font-size: smaller;
+    }
+}
+
+/* Caixa de edição da mensagem */
+
+.text-message{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.text-message h1{
+    font-size: larger;
+}
+.text-message p{
+    margin: 5px 0 20px 0;
+    font-size: smaller;
+    width: 70%;
+}
+#message{
+    width: 90%;
+    height: 130px;
+    border-radius: 10px;
+    text-indent: 15px;
+    padding: 10px ;
+    resize: none;
+    outline: none;
+}
+
+/* Botão gerador de link */
+
+#generate-link{
+    background-color:  var(--verde);
+    border: solid 2px  var(--verde);
+    border-radius: 10px;
+    padding: 10px 15px;
+    color: #fff;
+    font-weight: bolder;
+    text-transform: uppercase;
+    margin-top: 15px;
+    transition: .5s;
+    box-shadow:  0 2px 5px rgba(0, 0, 0, 0.514);
+}
+#generate-link:hover{
+    cursor: pointer;
+    color:  var(--verde);
+    background-color: #fff;
+    transform: scale(1.05);
+}
+
+@media (max-width:560px) {
+    .text-message p{
+        font-size: x-small;
+        margin: 2px 0px 15px 0;
+    }
+}
