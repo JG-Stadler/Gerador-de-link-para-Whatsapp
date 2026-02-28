@@ -79,3 +79,9 @@ body,html{
 .blur{
     filter: blur(5px);
 }
+
+.ad-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
